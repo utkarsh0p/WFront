@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #2b135a;
+  background:
+    radial-gradient(circle at top left, rgba(252, 242, 123, 0.55), transparent 24%),
+    radial-gradient(circle at 85% 20%, rgba(203, 170, 246, 0.45), transparent 18%),
+    linear-gradient(180deg, #f8f4f6 0%, #f6f4e5 26%, #f3eafe 100%);
+  font-family: "Manrope", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ivory text-dark-amethyst antialiased overflow-x-hidden;
+  margin: 0;
+  min-width: 320px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer components {
+  .page-shell {
+    @apply relative min-h-screen overflow-x-hidden;
+  }
+
+  .section-wrap {
+    @apply mx-auto w-full max-w-shell px-5 sm:px-6 lg:px-8;
+  }
+
+  .floating-nav-shell {
+    @apply rounded-full border border-white/60 bg-white/55 px-3 py-3 shadow-shell backdrop-blur-xl;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center gap-2 rounded-full bg-dark-amethyst px-6 py-3 font-heading text-sm font-semibold text-ivory transition duration-300 hover:-translate-y-0.5 hover:bg-mauve-dark;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center gap-2 rounded-full border border-dark-amethyst/15 bg-white/50 px-6 py-3 font-heading text-sm font-semibold text-dark-amethyst transition duration-300 hover:-translate-y-0.5 hover:border-dark-amethyst/30 hover:bg-white/75;
+  }
+
+  .section-kicker {
+    @apply mb-4 inline-flex rounded-full border border-dark-amethyst/10 bg-white/55 px-4 py-2 font-heading text-xs font-semibold tracking-[0.16em] text-mauve-dark;
+  }
+
+  .section-title {
+    @apply font-display text-4xl leading-[0.95] text-dark-amethyst sm:text-5xl lg:text-6xl;
+  }
+
+  .body-copy {
+    @apply text-base leading-7 sm:text-lg;
+    color: rgba(43, 19, 90, 0.72);
+  }
+
+  .premium-card {
+    @apply rounded-5xl border border-white/60 bg-white/55 shadow-card backdrop-blur-sm;
+  }
+
+  .texture-panel {
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(252, 242, 123, 0.45), transparent 24%),
+      radial-gradient(circle at 80% 10%, rgba(255, 140, 189, 0.25), transparent 18%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(243, 234, 254, 0.9));
+  }
+
+  .woven-pattern {
+    background-image:
+      linear-gradient(rgba(43, 19, 90, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43, 19, 90, 0.06) 1px, transparent 1px),
+      linear-gradient(135deg, rgba(203, 170, 246, 0.26), rgba(246, 244, 229, 0.3));
+    background-size: 24px 24px, 24px 24px, 100% 100%;
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
