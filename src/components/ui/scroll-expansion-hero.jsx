@@ -28,6 +28,21 @@ export default function ScrollExpansionHero({
     window.scrollTo(0, 0);
     scrollTriggerRef.current?.enable();
     ScrollTrigger.refresh();
+
+    requestAnimationFrame(() => {
+      const scrollTrigger = scrollTriggerRef.current;
+
+      if (!scrollTrigger) {
+        return;
+      }
+
+      const titleVisibleProgress = 0.28;
+      const targetScroll =
+        scrollTrigger.start +
+        (scrollTrigger.end - scrollTrigger.start) * titleVisibleProgress;
+
+      window.scrollTo(0, targetScroll);
+    });
   }, []);
 
   useLayoutEffect(() => {
@@ -169,7 +184,7 @@ export default function ScrollExpansionHero({
   }, []);
 
   const titleWords =
-    title === "WovenWeave" ? ["Woven", "Weave"] : title.split(" ");
+    title === "WovenWeave" ? ["Woven", "Warp"] : title.split(" ");
   const firstWord = titleWords[0] || "";
   const restOfTitle = titleWords.slice(1).join(" ");
 

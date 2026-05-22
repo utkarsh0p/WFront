@@ -75,6 +75,48 @@ export default function HomePage() {
         ease: "none",
         repeat: -1,
       });
+
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (!reducedMotion) {
+        const parallaxDepth = {
+          slow: { from: 24, to: -28, scrub: 1.4 },
+          medium: { from: 34, to: -42, scrub: 1.2 },
+          image: { from: 44, to: -54, scrub: 1.1, scale: 1.08 },
+          texture: { from: 64, to: -74, scrub: 1.6 },
+        };
+
+        gsap.utils.toArray("[data-parallax]").forEach((element) => {
+          const depth = element.dataset.parallax;
+          const settings = parallaxDepth[depth] || parallaxDepth.slow;
+          const section = element.closest("section") || element;
+
+          gsap.fromTo(
+            element,
+            {
+              y: () =>
+                window.innerWidth < 768
+                  ? settings.from * 0.45
+                  : settings.from,
+              scale: settings.scale || 1,
+            },
+            {
+              y: () =>
+                window.innerWidth < 768 ? settings.to * 0.45 : settings.to,
+              ease: "none",
+              scrollTrigger: {
+                trigger: section,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: settings.scrub,
+                invalidateOnRefresh: true,
+              },
+            },
+          );
+        });
+      }
     }, pageRef);
 
     return () => context.revert();

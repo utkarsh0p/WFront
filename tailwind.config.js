@@ -4,6 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        "muted-foreground": "hsl(var(--muted-foreground))",
         ivory: "#F6F4E5",
         "ivory-dark": "#929081",
         "dark-amethyst": "#2B135A",

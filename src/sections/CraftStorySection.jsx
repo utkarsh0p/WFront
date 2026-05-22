@@ -1,9 +1,16 @@
 export default function CraftStorySection() {
   return (
     <section className="section-wrap py-16 sm:py-24 lg:py-28">
-      <div className="premium-card overflow-hidden rounded-6xl">
+      <div className="premium-card relative overflow-hidden rounded-6xl">
+        <div
+          className="woven-pattern parallax-texture absolute -left-12 bottom-8 h-48 w-80 -rotate-6 rounded-6xl opacity-35"
+          data-parallax="texture"
+        />
         <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="bg-dark-amethyst px-6 py-12 text-ivory sm:px-10 lg:px-12 lg:py-16">
+          <div
+            className="relative bg-dark-amethyst px-6 py-12 text-ivory sm:px-10 lg:px-12 lg:py-16"
+            data-parallax="slow"
+          >
             <p className="section-kicker border-white/10 bg-white/10 text-banana-cream" data-animate="section">
               Craft story
             </p>
@@ -12,8 +19,12 @@ export default function CraftStorySection() {
               beneath each room.
             </h2>
           </div>
-          <div className="texture-panel px-6 py-12 sm:px-10 lg:px-12 lg:py-16">
-            <div className="grid gap-6 lg:grid-cols-2">
+          <div className="texture-panel relative overflow-hidden px-6 py-12 sm:px-10 lg:px-12 lg:py-16">
+            <div
+              className="absolute -right-20 top-6 h-44 w-72 rounded-6xl bg-white/35"
+              data-parallax="medium"
+            />
+            <div className="relative grid gap-6 lg:grid-cols-2">
               {[
                 "Our pieces begin as tactile studies: border width, density, edge finish, and how light sits across the weave.",
                 "That craft is then translated for contemporary interiors, so the final rug feels grounded in heritage but precise in placement.",

@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 :root {
+  --background: 48 37% 93%;
+  --foreground: 261 65% 21%;
+  --muted-foreground: 271 34% 48%;
   color: #2b135a;
   background:
     radial-gradient(circle at top left, rgba(252, 242, 123, 0.55), transparent 24%),
@@ -81,6 +84,15 @@ a {
       linear-gradient(90deg, rgba(43, 19, 90, 0.06) 1px, transparent 1px),
       linear-gradient(135deg, rgba(203, 170, 246, 0.26), rgba(246, 244, 229, 0.3));
     background-size: 24px 24px, 24px 24px, 100% 100%;
+  }
+
+  [data-parallax] {
+    @apply transform-gpu;
+    will-change: transform;
+  }
+
+  .parallax-texture {
+    @apply pointer-events-none border border-white/50 bg-mauve-light/60 shadow-card;
   }
 
   .hide-scrollbar {

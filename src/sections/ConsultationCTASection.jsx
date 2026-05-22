@@ -11,8 +11,16 @@ export default function ConsultationCTASection() {
         data-animate="panel"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(252,242,123,0.35),transparent_22%),radial-gradient(circle_at_bottom_right,rgba(203,170,246,0.35),transparent_24%)]" />
+        <div
+          className="woven-pattern parallax-texture absolute -right-12 -top-10 h-52 w-96 rotate-3 rounded-6xl opacity-25"
+          data-parallax="texture"
+        />
+        <div
+          className="woven-pattern parallax-texture absolute -bottom-16 left-8 h-44 w-80 -rotate-6 rounded-6xl opacity-20"
+          data-parallax="slow"
+        />
         <div className="relative grid gap-8 lg:grid-cols-[1fr_0.75fr] lg:items-end">
-          <div>
+          <div data-parallax="medium">
             <p className="section-kicker border-white/10 bg-white/10 text-banana-cream">
               Consultation
             </p>
@@ -20,7 +28,7 @@ export default function ConsultationCTASection() {
               Start with room mood, sizing, and material direction.
             </h2>
           </div>
-          <div className="space-y-5">
+          <div className="space-y-5" data-parallax="slow">
             <p className="text-base leading-7 text-ivory/75 sm:text-lg">
               Share the room, the light, and the level of texture you want.
               WovenWeave will turn that into a calmer shortlist of pieces and
