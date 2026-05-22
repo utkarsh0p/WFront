@@ -139,10 +139,7 @@ function RevealImageList({ onNavigate }: RevealImageListProps) {
   ];
 
   return (
-    <div className="flex flex-col gap-1 rounded-[2rem] bg-background px-6 py-5 shadow-card sm:px-8 sm:py-6">
-      <h3 className="font-heading text-sm font-black uppercase tracking-[0.18em] text-muted-foreground">
-        Navigate Woven Weave
-      </h3>
+    <div className="flex h-[110] w-screen flex-col gap-1 overflow-y-auto rounded-[2rem] bg-background px-6 py-5 shadow-card sm:px-8 sm:py-6 lg:px-14">
       {items.map((item) => (
         <RevealImageListItem
           key={item.to}

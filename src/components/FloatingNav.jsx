@@ -92,22 +92,15 @@ export default function FloatingNav() {
         <div
           ref={overlayRef}
           id="wovenweave-navigation"
-          className="fixed inset-0 z-10 flex items-start justify-center bg-dark-amethyst/18 px-4 pt-24 opacity-0 backdrop-blur-md sm:pt-28 lg:items-center lg:pt-0"
+          className="fixed inset-0 z-10 flex items-start justify-center bg-dark-amethyst/18 pt-24 opacity-0 backdrop-blur-md sm:pt-28 lg:items-center lg:pt-0"
           onClick={() => setIsOpen(false)}
         >
           <div
             ref={panelRef}
-            className="w-full max-w-4xl opacity-0"
+            className="w-screen opacity-0"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="mb-3 flex justify-end">
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                className="rounded-full border border-white/60 bg-white/60 px-5 py-3 font-heading text-xs font-semibold uppercase tracking-[0.16em] text-dark-amethyst shadow-shell backdrop-blur-xl transition duration-300 hover:bg-banana-cream"
-              >
-                Close
-              </button>
+            <div className="mb-3 flex justify-end px-4 sm:px-6">
             </div>
             <RevealImageList onNavigate={() => setIsOpen(false)} />
           </div>
